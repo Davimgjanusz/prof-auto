@@ -123,7 +123,7 @@ export default function Home() {
 
       <section className="about-section section" id="sobre">
         <div className="about-visual"><PhotoPlaceholder label={t.photoAbout} note={t.photoNote} variant="about" /><div className="about-accent">{t.aboutAccent[0]}<br /><strong>{t.aboutAccent[1]}</strong></div></div>
-        <div className="about-copy"><span className="kicker">{t.aboutKicker}</span><h2>{t.aboutTitle}</h2>{t.aboutText.map(paragraph => <p key={paragraph}>{paragraph}</p>)}<div className="signature">Isadora <small>{t.provisional}</small></div><a className="instagram-link" href={instagramUrl} target="_blank" rel="noreferrer"><AtSign size={18} /> @bbbisaduera <ArrowRight size={17} /></a></div>
+        <div className="about-copy"><span className="kicker">{t.aboutKicker}</span><h2>{t.aboutTitle}</h2>{t.aboutText.map(paragraph => <p key={paragraph}>{paragraph}</p>)}<div className="signature">Isadora <small>{t.provisional}</small></div><a className="instagram-link" href={instagramUrl} target="_blank" rel="noreferrer"><AtSign size={18} /> bbbisaduera <ArrowRight size={17} /></a></div>
       </section>
 
       <section className="formats-section section" id="formatos">
@@ -151,7 +151,7 @@ export default function Home() {
       <div className="footer-brand"><a className="brand" href="#inicio"><span className="brand-mark">BBB</span><span className="brand-copy"><strong>Blá Blá Blando</strong><small>by Isaduera</small></span></a><p>{t.footerTagline}</p></div>
       <div><h3>{t.navigate}</h3>{t.nav.slice(0, 3).map((label, index) => <a key={label} href={`#${navIds[index]}`}>{label}</a>)}</div>
       <div><h3>{t.languages}</h3>{t.courses.map(course => <span key={course.code}>{course.title}</span>)}</div>
-      <div><h3>{t.contact}</h3><a href={instagramUrl} target="_blank" rel="noreferrer"><AtSign size={15} /> @bbbisaduera</a><span>{t.online}</span></div>
+      <div><h3>{t.contact}</h3><a href={instagramUrl} target="_blank" rel="noreferrer"><AtSign size={15} /> bbbisaduera</a><span>{t.online}</span></div>
       <div className="footer-bottom"><span>© 2026 Blá Blá Blando by Isaduera</span><span>{t.rights}</span></div>
     </footer>
   </div>;
