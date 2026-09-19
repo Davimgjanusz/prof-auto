@@ -31,7 +31,7 @@ const testimonials = [
   ["Estudante C", "Espanhol", "Texto provisório sobre aprender no próprio ritmo e usar o idioma em situações reais do dia a dia."],
 ];
 
-function PhotoPlaceholder({ label, variant = "hero" }: { label: string; variant?: "hero" | "about" }) {
+function PhotoPlaceholder({ label, variant = "hero" }) {
   return <div className={`photo-placeholder photo-${variant}`} role="img" aria-label={label}>
     <div><div className="photo-mark"><Sparkles size={20} aria-hidden="true" /></div><span>{label}</span><small>imagem a definir</small></div>
   </div>;
@@ -84,7 +84,7 @@ export default function Home() {
 
       <section className="formats-section section" id="formatos">
         <div className="center-heading"><span className="kicker">Formatos de aula</span><h2>Aprenda do jeito que faz sentido para você</h2><p>Modalidades ilustrativas para apresentar as possibilidades da página.</p></div>
-        <div className="format-grid">{formats.map(([Icon, title, text]) => { const FormatIcon = Icon as typeof Users; return <article className="format-card" key={title as string}><span className="format-icon"><FormatIcon size={22} /></span><h3>{title as string}</h3><p>{text as string}</p></article>; })}</div>
+        <div className="format-grid">{formats.map(([FormatIcon, title, text]) => <article className="format-card" key={title}><span className="format-icon"><FormatIcon size={22} /></span><h3>{title}</h3><p>{text}</p></article>)}</div>
       </section>
 
       <section className="testimonials section" id="depoimentos">
