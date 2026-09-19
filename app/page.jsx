@@ -41,6 +41,25 @@ export default function Home() {
     localStorage.setItem("bbb-theme", theme);
   }, [theme, locale]);
 
+  useEffect(() => {
+    const root = document.documentElement;
+    const elements = document.querySelectorAll("[data-reveal]");
+    root.classList.add("reveal-ready");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14, rootMargin: "0px 0px -45px" });
+    elements.forEach((element) => observer.observe(element));
+    return () => {
+      observer.disconnect();
+      root.classList.remove("reveal-ready");
+    };
+  }, []);
+
   function changeLocale(nextLocale) {
     setLocale(nextLocale);
     localStorage.setItem("bbb-locale", nextLocale);
@@ -98,9 +117,9 @@ export default function Home() {
       </section>
 
       <section className="language-section section" id="aulas">
-        <div className="section-heading"><div><span className="kicker">{t.coursesKicker}</span><h2>{t.coursesTitle}</h2></div><p>{t.coursesIntro}</p></div>
+        <div className="section-heading" data-reveal><div><span className="kicker">{t.coursesKicker}</span><h2>{t.coursesTitle}</h2></div><p>{t.coursesIntro}</p></div>
         <div className="language-grid">
-          {t.courses.map((course, index) => <button className={`language-card tone-${index} ${activeCourse === index ? "selected" : ""}`} onClick={() => setActiveCourse(index)} aria-pressed={activeCourse === index} key={course.code}>
+          {t.courses.map((course, index) => <button className={`language-card tone-${index} ${activeCourse === index ? "selected" : ""}`} style={{ "--reveal-delay": `${index * 90}ms` }} data-reveal onClick={() => setActiveCourse(index)} aria-pressed={activeCourse === index} key={course.code}>
             <span className="language-code">{course.code}</span><h3>{course.title}</h3><p>{course.text}</p><div className="card-meta"><Check size={16} /> {activeCourse === index ? t.levels : t.coursesKicker}</div>
           </button>)}
         </div>
@@ -108,29 +127,29 @@ export default function Home() {
       </section>
 
       <section className="benefit-band">
-        <div className="benefit-intro"><span className="kicker kicker-light">{t.benefitsKicker}</span><h2>{t.benefitsTitle}</h2></div>
-        <div className="benefit-list">{t.benefits.map(benefit => <div key={benefit}><span><Check size={15} /></span>{benefit}</div>)}</div>
+        <div className="benefit-intro" data-reveal><span className="kicker kicker-light">{t.benefitsKicker}</span><h2>{t.benefitsTitle}</h2></div>
+        <div className="benefit-list">{t.benefits.map((benefit, index) => <div data-reveal style={{ "--reveal-delay": `${index * 60}ms` }} key={index}><span><Check size={15} /></span>{benefit}</div>)}</div>
       </section>
 
       <section className="method-section section" id="metodologia">
-        <div className="method-copy"><span className="kicker">{t.methodKicker}</span><h2>{t.methodTitle}</h2><p>{t.methodIntro}</p></div>
-        <div className="steps">{t.steps.map(([number, title, text], index) => <button className={`step ${activeStep === index ? "open" : ""}`} onClick={() => setActiveStep(index)} aria-expanded={activeStep === index} key={number}><span>{number}</span><div><h3>{title}</h3>{activeStep === index && <p>{text}</p>}</div><ChevronDown size={20} /></button>)}</div>
+        <div className="method-copy" data-reveal><span className="kicker">{t.methodKicker}</span><h2>{t.methodTitle}</h2><p>{t.methodIntro}</p></div>
+        <div className="steps">{t.steps.map(([number, title, text], index) => <button className={`step ${activeStep === index ? "open" : ""}`} style={{ "--reveal-delay": `${index * 75}ms` }} data-reveal onClick={() => setActiveStep(index)} aria-expanded={activeStep === index} key={number}><span>{number}</span><div><h3>{title}</h3>{activeStep === index && <p>{text}</p>}</div><ChevronDown size={20} /></button>)}</div>
       </section>
 
       <section className="about-section section" id="sobre">
-        <div className="about-visual"><PhotoPlaceholder label={t.photoAbout} note={t.photoNote} variant="about" /><div className="about-accent">{t.aboutAccent[0]}<br /><strong>{t.aboutAccent[1]}</strong></div></div>
-        <div className="about-copy"><span className="kicker">{t.aboutKicker}</span><h2>{t.aboutTitle}</h2>{t.aboutText.map(paragraph => <p key={paragraph}>{paragraph}</p>)}<div className="signature">Isadora <small>{t.provisional}</small></div><a className="instagram-link" href={instagramUrl} target="_blank" rel="noreferrer"><AtSign size={18} /> bbbisaduera <ArrowRight size={17} /></a></div>
+        <div className="about-visual" data-reveal><PhotoPlaceholder label={t.photoAbout} note={t.photoNote} variant="about" /><div className="about-accent">{t.aboutAccent[0]}<br /><strong>{t.aboutAccent[1]}</strong></div></div>
+        <div className="about-copy" data-reveal><span className="kicker">{t.aboutKicker}</span><h2>{t.aboutTitle}</h2>{t.aboutText.map(paragraph => <p key={paragraph}>{paragraph}</p>)}<div className="signature">Isadora <small>{t.provisional}</small></div><a className="instagram-link" href={instagramUrl} target="_blank" rel="noreferrer"><AtSign size={18} /> bbbisaduera <ArrowRight size={17} /></a></div>
       </section>
 
       <section className="formats-section section" id="formatos">
-        <div className="center-heading"><span className="kicker">{t.formatsKicker}</span><h2>{t.formatsTitle}</h2><p>{t.formatsIntro}</p></div>
-        <div className="format-grid">{t.formats.map(([title, text], index) => { const FormatIcon = formatIcons[index]; return <article className="format-card" key={title}><span className="format-icon"><FormatIcon size={22} /></span><h3>{title}</h3><p>{text}</p></article>; })}</div>
-        <div className="formats-action"><a className="button" href={instagramUrl} target="_blank" rel="noreferrer">{t.formatsCta} <AtSign size={18} /></a></div>
+        <div className="center-heading" data-reveal><span className="kicker">{t.formatsKicker}</span><h2>{t.formatsTitle}</h2><p>{t.formatsIntro}</p></div>
+        <div className="format-grid">{t.formats.map(([title, text], index) => { const FormatIcon = formatIcons[index]; return <article className="format-card" style={{ "--reveal-delay": `${index * 75}ms` }} data-reveal key={index}><span className="format-icon"><FormatIcon size={22} /></span><h3>{title}</h3><p>{text}</p></article>; })}</div>
+        <div className="formats-action" data-reveal><a className="button" href={instagramUrl} target="_blank" rel="noreferrer">{t.formatsCta} <AtSign size={18} /></a></div>
       </section>
 
       <section className="testimonials section" id="depoimentos">
-        <div className="center-heading"><span className="kicker">{t.testimonialsKicker}</span><h2>{t.testimonialsTitle}</h2></div>
-        <div className="testimonial-stage">
+        <div className="center-heading" data-reveal><span className="kicker">{t.testimonialsKicker}</span><h2>{t.testimonialsTitle}</h2></div>
+        <div className="testimonial-stage" data-reveal>
           <button className="carousel-button" onClick={() => cycleTestimonial(-1)} aria-label="Anterior"><ArrowLeft size={20} /></button>
           <article className="testimonial active-testimonial" key={`${locale}-${activeTestimonial}`}><Quote size={31} /><p>“{t.testimonials[activeTestimonial][2]}”</p><div><span>{t.testimonials[activeTestimonial][0]}</span><small>{t.testimonials[activeTestimonial][1]}</small></div></article>
           <button className="carousel-button" onClick={() => cycleTestimonial(1)} aria-label="Próximo"><ArrowRight size={20} /></button>
@@ -138,7 +157,7 @@ export default function Home() {
         <div className="carousel-dots">{t.testimonials.map((item, index) => <button aria-label={`${index + 1}`} className={activeTestimonial === index ? "active" : ""} onClick={() => setActiveTestimonial(index)} key={item[0]} />)}</div>
       </section>
 
-      <section className="contact-section" id="contato">
+      <section className="contact-section" id="contato" data-reveal>
         <div><span className="kicker kicker-light">{t.contactKicker}</span><h2>{t.contactTitle}</h2><p>{t.contactText}</p></div>
         <a className="button button-lime" href={instagramUrl} target="_blank" rel="noreferrer">{t.instagram} <AtSign size={19} /></a>
       </section>
