@@ -1,11 +1,11 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Nome da Professora | Aulas de idiomas",
-  description: "Proposta visual para aulas personalizadas de português, espanhol e inglês.",
+  title: "Blá Blá Blando by Isaduera | Aulas online de idiomas",
+  description: "Aulas online de português, espanhol e inglês com Isadora.",
   icons: { icon: "/favicon.svg" },
 };
 
 export default function RootLayout({ children }) {
-  return <html lang="pt-BR"><body>{children}</body></html>;
+  return <html lang="pt-BR" suppressHydrationWarning><body>{children}</body></html>;
 }
