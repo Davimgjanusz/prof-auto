@@ -24,7 +24,6 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeCourse, setActiveCourse] = useState(0);
   const [activeStep, setActiveStep] = useState(0);
-  const [activeFormat, setActiveFormat] = useState(0);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const t = content[locale];
 
@@ -125,7 +124,8 @@ export default function Home() {
 
       <section className="formats-section section" id="formatos">
         <div className="center-heading"><span className="kicker">{t.formatsKicker}</span><h2>{t.formatsTitle}</h2><p>{t.formatsIntro}</p></div>
-        <div className="format-grid">{t.formats.map(([title, text], index) => { const FormatIcon = formatIcons[index]; return <button className={`format-card ${activeFormat === index ? "selected" : ""}`} onClick={() => setActiveFormat(index)} aria-pressed={activeFormat === index} key={title}><span className="format-icon"><FormatIcon size={22} /></span><h3>{title}</h3><p>{text}</p><span className="select-indicator"><Check size={15} /></span></button>; })}</div>
+        <div className="format-grid">{t.formats.map(([title, text], index) => { const FormatIcon = formatIcons[index]; return <article className="format-card" key={title}><span className="format-icon"><FormatIcon size={22} /></span><h3>{title}</h3><p>{text}</p></article>; })}</div>
+        <div className="formats-action"><a className="button" href={instagramUrl} target="_blank" rel="noreferrer">{t.formatsCta} <AtSign size={18} /></a></div>
       </section>
 
       <section className="testimonials section" id="depoimentos">
