@@ -6,7 +6,7 @@ function DirectionProvider({
   direction,
   children
 }) {
-  return /* @__PURE__ */ jsx(Direction.DirectionProvider, { dir: direction ?? dir, children });
+  return jsx(Direction.DirectionProvider, { dir: direction ?? dir, children });
 }
 const useDirection = Direction.useDirection;
 export {

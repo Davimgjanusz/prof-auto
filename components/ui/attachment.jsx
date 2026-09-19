@@ -26,7 +26,7 @@ function Attachment({
   orientation = "horizontal",
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "attachment",
@@ -57,7 +57,7 @@ function AttachmentMedia({
   variant = "icon",
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "attachment-media",
@@ -71,7 +71,7 @@ function AttachmentContent({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "attachment-content",
@@ -87,7 +87,7 @@ function AttachmentTitle({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "span",
     {
       "data-slot": "attachment-title",
@@ -103,7 +103,7 @@ function AttachmentDescription({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "span",
     {
       "data-slot": "attachment-description",
@@ -120,7 +120,7 @@ function AttachmentActions({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "attachment-actions",
@@ -138,7 +138,7 @@ function AttachmentAction({
   size = "icon-xs",
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     Button,
     {
       "data-slot": "attachment-action",
@@ -156,7 +156,7 @@ function AttachmentTrigger({
   ...props
 }) {
   const Comp = asChild ? Slot.Root : "button";
-  return /* @__PURE__ */ jsx(
+  return jsx(
     Comp,
     {
       "data-slot": "attachment-trigger",
@@ -167,7 +167,7 @@ function AttachmentTrigger({
   );
 }
 function AttachmentGroup({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "attachment-group",

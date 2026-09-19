@@ -16,7 +16,6 @@ if (![
   process.env.SHARP_IGNORE_GLOBAL_LIBVIPS = "1";
 }
 
-// Invoke npm's JavaScript entrypoint, avoiding platform-specific shell shims.
 const installed = spawnSync(
   process.execPath,
   [

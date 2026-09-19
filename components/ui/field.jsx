@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 function FieldSet({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "fieldset",
     {
       "data-slot": "field-set",
@@ -24,7 +24,7 @@ function FieldLegend({
   variant = "legend",
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "legend",
     {
       "data-slot": "field-legend",
@@ -40,7 +40,7 @@ function FieldLegend({
   );
 }
 function FieldGroup({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "field-group",
@@ -80,7 +80,7 @@ function Field({
   orientation = "vertical",
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       role: "group",
@@ -92,7 +92,7 @@ function Field({
   );
 }
 function FieldContent({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "field-content",
@@ -108,7 +108,7 @@ function FieldLabel({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     Label,
     {
       "data-slot": "field-label",
@@ -123,7 +123,7 @@ function FieldLabel({
   );
 }
 function FieldTitle({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "field-label",
@@ -136,7 +136,7 @@ function FieldTitle({ className, ...props }) {
   );
 }
 function FieldDescription({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "p",
     {
       "data-slot": "field-description",
@@ -155,7 +155,7 @@ function FieldSeparator({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsxs(
+  return jsxs(
     "div",
     {
       "data-slot": "field-separator",
@@ -166,8 +166,8 @@ function FieldSeparator({
       ),
       ...props,
       children: [
-        /* @__PURE__ */ jsx(Separator, { className: "absolute inset-0 top-1/2" }),
-        children && /* @__PURE__ */ jsx(
+        jsx(Separator, { className: "absolute inset-0 top-1/2" }),
+        children && jsx(
           "span",
           {
             className: "relative mx-auto block w-fit bg-background px-2 text-muted-foreground",
@@ -198,14 +198,14 @@ function FieldError({
     if (uniqueErrors?.length == 1) {
       return uniqueErrors[0]?.message;
     }
-    return /* @__PURE__ */ jsx("ul", { className: "ml-4 flex list-disc flex-col gap-1", children: uniqueErrors.map(
-      (error, index) => error?.message && /* @__PURE__ */ jsx("li", { children: error.message }, index)
+    return jsx("ul", { className: "ml-4 flex list-disc flex-col gap-1", children: uniqueErrors.map(
+      (error, index) => error?.message && jsx("li", { children: error.message }, index)
     ) });
   }, [children, errors]);
   if (!content) {
     return null;
   }
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       role: "alert",

@@ -27,7 +27,7 @@ function Badge({
   ...props
 }) {
   const Comp = asChild ? Slot.Root : "span";
-  return /* @__PURE__ */ jsx(
+  return jsx(
     Comp,
     {
       "data-slot": "badge",

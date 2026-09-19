@@ -11,17 +11,17 @@ import { useTheme } from "next-themes";
 import { Toaster as Sonner } from "sonner";
 const Toaster = ({ ...props }) => {
   const { theme = "system" } = useTheme();
-  return /* @__PURE__ */ jsx(
+  return jsx(
     Sonner,
     {
       theme,
       className: "toaster group",
       icons: {
-        success: /* @__PURE__ */ jsx(CircleCheckIcon, { className: "size-4" }),
-        info: /* @__PURE__ */ jsx(InfoIcon, { className: "size-4" }),
-        warning: /* @__PURE__ */ jsx(TriangleAlertIcon, { className: "size-4" }),
-        error: /* @__PURE__ */ jsx(OctagonXIcon, { className: "size-4" }),
-        loading: /* @__PURE__ */ jsx(Loader2Icon, { className: "size-4 animate-spin" })
+        success: jsx(CircleCheckIcon, { className: "size-4" }),
+        info: jsx(InfoIcon, { className: "size-4" }),
+        warning: jsx(TriangleAlertIcon, { className: "size-4" }),
+        error: jsx(OctagonXIcon, { className: "size-4" }),
+        loading: jsx(Loader2Icon, { className: "size-4 animate-spin" })
       },
       style: {
         "--normal-bg": "var(--popover)",

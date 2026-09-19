@@ -6,13 +6,13 @@ function NativeSelect({
   size = "default",
   ...props
 }) {
-  return /* @__PURE__ */ jsxs(
+  return jsxs(
     "div",
     {
       className: "group/native-select relative w-fit has-[select:disabled]:opacity-50",
       "data-slot": "native-select-wrapper",
       children: [
-        /* @__PURE__ */ jsx(
+        jsx(
           "select",
           {
             "data-slot": "native-select",
@@ -26,7 +26,7 @@ function NativeSelect({
             ...props
           }
         ),
-        /* @__PURE__ */ jsx(
+        jsx(
           ChevronDownIcon,
           {
             className: "pointer-events-none absolute top-1/2 right-3.5 size-4 -translate-y-1/2 text-muted-foreground opacity-50 select-none",
@@ -42,7 +42,7 @@ function NativeSelectOption({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "option",
     {
       "data-slot": "native-select-option",
@@ -55,7 +55,7 @@ function NativeSelectOptGroup({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "optgroup",
     {
       "data-slot": "native-select-optgroup",

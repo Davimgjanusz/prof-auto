@@ -23,7 +23,7 @@ function Calendar({
   ...props
 }) {
   const defaultClassNames = getDefaultClassNames();
-  return /* @__PURE__ */ jsx(
+  return jsx(
     DayPicker,
     {
       showOutsideDays,
@@ -123,7 +123,7 @@ function Calendar({
       },
       components: {
         Root: ({ className: className2, rootRef, ...props2 }) => {
-          return /* @__PURE__ */ jsx(
+          return jsx(
             "div",
             {
               "data-slot": "calendar",
@@ -135,10 +135,10 @@ function Calendar({
         },
         Chevron: ({ className: className2, orientation, ...props2 }) => {
           if (orientation === "left") {
-            return /* @__PURE__ */ jsx(ChevronLeftIcon, { className: cn("size-4", className2), ...props2 });
+            return jsx(ChevronLeftIcon, { className: cn("size-4", className2), ...props2 });
           }
           if (orientation === "right") {
-            return /* @__PURE__ */ jsx(
+            return jsx(
               ChevronRightIcon,
               {
                 className: cn("size-4", className2),
@@ -146,11 +146,11 @@ function Calendar({
               }
             );
           }
-          return /* @__PURE__ */ jsx(ChevronDownIcon, { className: cn("size-4", className2), ...props2 });
+          return jsx(ChevronDownIcon, { className: cn("size-4", className2), ...props2 });
         },
         DayButton: CalendarDayButton,
         WeekNumber: ({ children, ...props2 }) => {
-          return /* @__PURE__ */ jsx("td", { ...props2, children: /* @__PURE__ */ jsx("div", { className: "flex size-(--cell-size) items-center justify-center text-center", children }) });
+          return jsx("td", { ...props2, children: jsx("div", { className: "flex size-(--cell-size) items-center justify-center text-center", children }) });
         },
         ...components
       },
@@ -169,7 +169,7 @@ function CalendarDayButton({
   React.useEffect(() => {
     if (modifiers.focused) ref.current?.focus();
   }, [modifiers.focused]);
-  return /* @__PURE__ */ jsx(
+  return jsx(
     Button,
     {
       ref,

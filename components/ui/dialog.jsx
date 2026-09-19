@@ -7,28 +7,28 @@ import { Button } from "@/components/ui/button";
 function Dialog({
   ...props
 }) {
-  return /* @__PURE__ */ jsx(DialogPrimitive.Root, { "data-slot": "dialog", ...props });
+  return jsx(DialogPrimitive.Root, { "data-slot": "dialog", ...props });
 }
 function DialogTrigger({
   ...props
 }) {
-  return /* @__PURE__ */ jsx(DialogPrimitive.Trigger, { "data-slot": "dialog-trigger", ...props });
+  return jsx(DialogPrimitive.Trigger, { "data-slot": "dialog-trigger", ...props });
 }
 function DialogPortal({
   ...props
 }) {
-  return /* @__PURE__ */ jsx(DialogPrimitive.Portal, { "data-slot": "dialog-portal", ...props });
+  return jsx(DialogPrimitive.Portal, { "data-slot": "dialog-portal", ...props });
 }
 function DialogClose({
   ...props
 }) {
-  return /* @__PURE__ */ jsx(DialogPrimitive.Close, { "data-slot": "dialog-close", ...props });
+  return jsx(DialogPrimitive.Close, { "data-slot": "dialog-close", ...props });
 }
 function DialogOverlay({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     DialogPrimitive.Overlay,
     {
       "data-slot": "dialog-overlay",
@@ -46,9 +46,9 @@ function DialogContent({
   showCloseButton = true,
   ...props
 }) {
-  return /* @__PURE__ */ jsxs(DialogPortal, { "data-slot": "dialog-portal", children: [
-    /* @__PURE__ */ jsx(DialogOverlay, {}),
-    /* @__PURE__ */ jsxs(
+  return jsxs(DialogPortal, { "data-slot": "dialog-portal", children: [
+    jsx(DialogOverlay, {}),
+    jsxs(
       DialogPrimitive.Content,
       {
         "data-slot": "dialog-content",
@@ -59,14 +59,14 @@ function DialogContent({
         ...props,
         children: [
           children,
-          showCloseButton && /* @__PURE__ */ jsxs(
+          showCloseButton && jsxs(
             DialogPrimitive.Close,
             {
               "data-slot": "dialog-close",
               className: "absolute top-4 right-4 rounded-xs opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
               children: [
-                /* @__PURE__ */ jsx(XIcon, {}),
-                /* @__PURE__ */ jsx("span", { className: "sr-only", children: "Close" })
+                jsx(XIcon, {}),
+                jsx("span", { className: "sr-only", children: "Close" })
               ]
             }
           )
@@ -76,7 +76,7 @@ function DialogContent({
   ] });
 }
 function DialogHeader({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "dialog-header",
@@ -91,7 +91,7 @@ function DialogFooter({
   children,
   ...props
 }) {
-  return /* @__PURE__ */ jsxs(
+  return jsxs(
     "div",
     {
       "data-slot": "dialog-footer",
@@ -102,7 +102,7 @@ function DialogFooter({
       ...props,
       children: [
         children,
-        showCloseButton && /* @__PURE__ */ jsx(DialogPrimitive.Close, { asChild: true, children: /* @__PURE__ */ jsx(Button, { variant: "outline", children: "Close" }) })
+        showCloseButton && jsx(DialogPrimitive.Close, { asChild: true, children: jsx(Button, { variant: "outline", children: "Close" }) })
       ]
     }
   );
@@ -111,7 +111,7 @@ function DialogTitle({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     DialogPrimitive.Title,
     {
       "data-slot": "dialog-title",
@@ -124,7 +124,7 @@ function DialogDescription({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     DialogPrimitive.Description,
     {
       "data-slot": "dialog-description",

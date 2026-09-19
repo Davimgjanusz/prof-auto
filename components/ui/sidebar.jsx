@@ -88,7 +88,7 @@ function SidebarProvider({
     }),
     [state, open, setOpen, isMobile, openMobile, setOpenMobile, toggleSidebar]
   );
-  return /* @__PURE__ */ jsx(SidebarContext.Provider, { value: contextValue, children: /* @__PURE__ */ jsx(TooltipProvider, { delayDuration: 0, children: /* @__PURE__ */ jsx(
+  return jsx(SidebarContext.Provider, { value: contextValue, children: jsx(TooltipProvider, { delayDuration: 0, children: jsx(
     "div",
     {
       "data-slot": "sidebar-wrapper",
@@ -116,7 +116,7 @@ function Sidebar({
 }) {
   const { isMobile, state, openMobile, setOpenMobile } = useSidebar();
   if (collapsible === "none") {
-    return /* @__PURE__ */ jsx(
+    return jsx(
       "div",
       {
         "data-slot": "sidebar",
@@ -130,7 +130,7 @@ function Sidebar({
     );
   }
   if (isMobile) {
-    return /* @__PURE__ */ jsx(Sheet, { open: openMobile, onOpenChange: setOpenMobile, ...props, children: /* @__PURE__ */ jsxs(
+    return jsx(Sheet, { open: openMobile, onOpenChange: setOpenMobile, ...props, children: jsxs(
       SheetContent,
       {
         "data-sidebar": "sidebar",
@@ -142,16 +142,16 @@ function Sidebar({
         },
         side,
         children: [
-          /* @__PURE__ */ jsxs(SheetHeader, { className: "sr-only", children: [
-            /* @__PURE__ */ jsx(SheetTitle, { children: "Sidebar" }),
-            /* @__PURE__ */ jsx(SheetDescription, { children: "Displays the mobile sidebar." })
+          jsxs(SheetHeader, { className: "sr-only", children: [
+            jsx(SheetTitle, { children: "Sidebar" }),
+            jsx(SheetDescription, { children: "Displays the mobile sidebar." })
           ] }),
-          /* @__PURE__ */ jsx("div", { className: "flex h-full w-full flex-col", children })
+          jsx("div", { className: "flex h-full w-full flex-col", children })
         ]
       }
     ) });
   }
-  return /* @__PURE__ */ jsxs(
+  return jsxs(
     "div",
     {
       className: "group peer hidden text-sidebar-foreground md:block",
@@ -161,7 +161,7 @@ function Sidebar({
       "data-side": side,
       "data-slot": "sidebar",
       children: [
-        /* @__PURE__ */ jsx(
+        jsx(
           "div",
           {
             "data-slot": "sidebar-gap",
@@ -173,19 +173,18 @@ function Sidebar({
             )
           }
         ),
-        /* @__PURE__ */ jsx(
+        jsx(
           "div",
           {
             "data-slot": "sidebar-container",
             className: cn(
               "fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) transition-[left,right,width] duration-200 ease-linear md:flex",
               side === "left" ? "left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]" : "right-0 group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)]",
-              // Adjust the padding for floating and inset variants.
               variant === "floating" || variant === "inset" ? "p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]" : "group-data-[collapsible=icon]:w-(--sidebar-width-icon) group-data-[side=left]:border-r group-data-[side=right]:border-l",
               className
             ),
             ...props,
-            children: /* @__PURE__ */ jsx(
+            children: jsx(
               "div",
               {
                 "data-sidebar": "sidebar",
@@ -206,7 +205,7 @@ function SidebarTrigger({
   ...props
 }) {
   const { toggleSidebar } = useSidebar();
-  return /* @__PURE__ */ jsxs(
+  return jsxs(
     Button,
     {
       "data-sidebar": "trigger",
@@ -220,15 +219,15 @@ function SidebarTrigger({
       },
       ...props,
       children: [
-        /* @__PURE__ */ jsx(PanelLeftIcon, {}),
-        /* @__PURE__ */ jsx("span", { className: "sr-only", children: "Toggle Sidebar" })
+        jsx(PanelLeftIcon, {}),
+        jsx("span", { className: "sr-only", children: "Toggle Sidebar" })
       ]
     }
   );
 }
 function SidebarRail({ className, ...props }) {
   const { toggleSidebar } = useSidebar();
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "button",
     {
       "data-sidebar": "rail",
@@ -251,7 +250,7 @@ function SidebarRail({ className, ...props }) {
   );
 }
 function SidebarInset({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "main",
     {
       "data-slot": "sidebar-inset",
@@ -268,7 +267,7 @@ function SidebarInput({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     Input,
     {
       "data-slot": "sidebar-input",
@@ -279,7 +278,7 @@ function SidebarInput({
   );
 }
 function SidebarHeader({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "sidebar-header",
@@ -290,7 +289,7 @@ function SidebarHeader({ className, ...props }) {
   );
 }
 function SidebarFooter({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "sidebar-footer",
@@ -304,7 +303,7 @@ function SidebarSeparator({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     Separator,
     {
       "data-slot": "sidebar-separator",
@@ -315,7 +314,7 @@ function SidebarSeparator({
   );
 }
 function SidebarContent({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "sidebar-content",
@@ -329,7 +328,7 @@ function SidebarContent({ className, ...props }) {
   );
 }
 function SidebarGroup({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "sidebar-group",
@@ -345,7 +344,7 @@ function SidebarGroupLabel({
   ...props
 }) {
   const Comp = asChild ? Slot.Root : "div";
-  return /* @__PURE__ */ jsx(
+  return jsx(
     Comp,
     {
       "data-slot": "sidebar-group-label",
@@ -365,14 +364,13 @@ function SidebarGroupAction({
   ...props
 }) {
   const Comp = asChild ? Slot.Root : "button";
-  return /* @__PURE__ */ jsx(
+  return jsx(
     Comp,
     {
       "data-slot": "sidebar-group-action",
       "data-sidebar": "group-action",
       className: cn(
         "absolute top-3.5 right-3 flex aspect-square w-5 items-center justify-center rounded-md p-0 text-sidebar-foreground ring-sidebar-ring outline-hidden transition-transform hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0",
-        // Increases the hit area of the button on mobile.
         "after:absolute after:-inset-2 md:after:hidden",
         "group-data-[collapsible=icon]:hidden",
         className
@@ -385,7 +383,7 @@ function SidebarGroupContent({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "sidebar-group-content",
@@ -396,7 +394,7 @@ function SidebarGroupContent({
   );
 }
 function SidebarMenu({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "ul",
     {
       "data-slot": "sidebar-menu",
@@ -407,7 +405,7 @@ function SidebarMenu({ className, ...props }) {
   );
 }
 function SidebarMenuItem({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "li",
     {
       "data-slot": "sidebar-menu-item",
@@ -448,7 +446,7 @@ function SidebarMenuButton({
 }) {
   const Comp = asChild ? Slot.Root : "button";
   const { isMobile, state } = useSidebar();
-  const button = /* @__PURE__ */ jsx(
+  const button = jsx(
     Comp,
     {
       "data-slot": "sidebar-menu-button",
@@ -467,9 +465,9 @@ function SidebarMenuButton({
       children: tooltip
     };
   }
-  return /* @__PURE__ */ jsxs(Tooltip, { children: [
-    /* @__PURE__ */ jsx(TooltipTrigger, { asChild: true, children: button }),
-    /* @__PURE__ */ jsx(
+  return jsxs(Tooltip, { children: [
+    jsx(TooltipTrigger, { asChild: true, children: button }),
+    jsx(
       TooltipContent,
       {
         side: "right",
@@ -487,14 +485,13 @@ function SidebarMenuAction({
   ...props
 }) {
   const Comp = asChild ? Slot.Root : "button";
-  return /* @__PURE__ */ jsx(
+  return jsx(
     Comp,
     {
       "data-slot": "sidebar-menu-action",
       "data-sidebar": "menu-action",
       className: cn(
         "absolute top-1.5 right-1 flex aspect-square w-5 items-center justify-center rounded-md p-0 text-sidebar-foreground ring-sidebar-ring outline-hidden transition-transform peer-hover/menu-button:text-sidebar-accent-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0",
-        // Increases the hit area of the button on mobile.
         "after:absolute after:-inset-2 md:after:hidden",
         "peer-data-[size=sm]/menu-button:top-1",
         "peer-data-[size=default]/menu-button:top-1.5",
@@ -511,7 +508,7 @@ function SidebarMenuBadge({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "sidebar-menu-badge",
@@ -535,7 +532,7 @@ function SidebarMenuSkeleton({
   ...props
 }) {
   const width = "70%";
-  return /* @__PURE__ */ jsxs(
+  return jsxs(
     "div",
     {
       "data-slot": "sidebar-menu-skeleton",
@@ -543,14 +540,14 @@ function SidebarMenuSkeleton({
       className: cn("flex h-8 items-center gap-2 rounded-md px-2", className),
       ...props,
       children: [
-        showIcon && /* @__PURE__ */ jsx(
+        showIcon && jsx(
           Skeleton,
           {
             className: "size-4 rounded-md",
             "data-sidebar": "menu-skeleton-icon"
           }
         ),
-        /* @__PURE__ */ jsx(
+        jsx(
           Skeleton,
           {
             className: "h-4 max-w-(--skeleton-width) flex-1",
@@ -565,7 +562,7 @@ function SidebarMenuSkeleton({
   );
 }
 function SidebarMenuSub({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "ul",
     {
       "data-slot": "sidebar-menu-sub",
@@ -583,7 +580,7 @@ function SidebarMenuSubItem({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "li",
     {
       "data-slot": "sidebar-menu-sub-item",
@@ -601,7 +598,7 @@ function SidebarMenuSubButton({
   ...props
 }) {
   const Comp = asChild ? Slot.Root : "a";
-  return /* @__PURE__ */ jsx(
+  return jsx(
     Comp,
     {
       "data-slot": "sidebar-menu-sub-button",

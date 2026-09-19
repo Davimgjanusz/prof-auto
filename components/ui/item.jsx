@@ -4,7 +4,7 @@ import { Slot } from "radix-ui";
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
 function ItemGroup({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       role: "list",
@@ -18,7 +18,7 @@ function ItemSeparator({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     Separator,
     {
       "data-slot": "item-separator",
@@ -56,7 +56,7 @@ function Item({
   ...props
 }) {
   const Comp = asChild ? Slot.Root : "div";
-  return /* @__PURE__ */ jsx(
+  return jsx(
     Comp,
     {
       "data-slot": "item",
@@ -87,7 +87,7 @@ function ItemMedia({
   variant = "default",
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "item-media",
@@ -98,7 +98,7 @@ function ItemMedia({
   );
 }
 function ItemContent({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "item-content",
@@ -111,7 +111,7 @@ function ItemContent({ className, ...props }) {
   );
 }
 function ItemTitle({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "item-title",
@@ -124,7 +124,7 @@ function ItemTitle({ className, ...props }) {
   );
 }
 function ItemDescription({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "p",
     {
       "data-slot": "item-description",
@@ -138,7 +138,7 @@ function ItemDescription({ className, ...props }) {
   );
 }
 function ItemActions({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "item-actions",
@@ -148,7 +148,7 @@ function ItemActions({ className, ...props }) {
   );
 }
 function ItemHeader({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "item-header",
@@ -161,7 +161,7 @@ function ItemHeader({ className, ...props }) {
   );
 }
 function ItemFooter({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "item-footer",

@@ -7,7 +7,7 @@ function ResizablePanelGroup({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     ResizablePrimitive.Group,
     {
       "data-slot": "resizable-panel-group",
@@ -20,14 +20,14 @@ function ResizablePanelGroup({
   );
 }
 function ResizablePanel({ ...props }) {
-  return /* @__PURE__ */ jsx(ResizablePrimitive.Panel, { "data-slot": "resizable-panel", ...props });
+  return jsx(ResizablePrimitive.Panel, { "data-slot": "resizable-panel", ...props });
 }
 function ResizableHandle({
   withHandle,
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     ResizablePrimitive.Separator,
     {
       "data-slot": "resizable-handle",
@@ -36,7 +36,7 @@ function ResizableHandle({
         className
       ),
       ...props,
-      children: withHandle && /* @__PURE__ */ jsx("div", { className: "z-10 flex h-4 w-3 items-center justify-center rounded-xs border bg-border", children: /* @__PURE__ */ jsx(GripVerticalIcon, { className: "size-2.5" }) })
+      children: withHandle && jsx("div", { className: "z-10 flex h-4 w-3 items-center justify-center rounded-xs border bg-border", children: jsx(GripVerticalIcon, { className: "size-2.5" }) })
     }
   );
 }

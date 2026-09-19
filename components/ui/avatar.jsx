@@ -7,7 +7,7 @@ function Avatar({
   size = "default",
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     AvatarPrimitive.Root,
     {
       "data-slot": "avatar",
@@ -24,7 +24,7 @@ function AvatarImage({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     AvatarPrimitive.Image,
     {
       "data-slot": "avatar-image",
@@ -37,7 +37,7 @@ function AvatarFallback({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     AvatarPrimitive.Fallback,
     {
       "data-slot": "avatar-fallback",
@@ -50,7 +50,7 @@ function AvatarFallback({
   );
 }
 function AvatarBadge({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "span",
     {
       "data-slot": "avatar-badge",
@@ -66,7 +66,7 @@ function AvatarBadge({ className, ...props }) {
   );
 }
 function AvatarGroup({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "avatar-group",
@@ -82,7 +82,7 @@ function AvatarGroupCount({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "avatar-group-count",

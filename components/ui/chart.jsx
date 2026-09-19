@@ -26,7 +26,7 @@ function ChartContainer({
 }) {
   const uniqueId = React.useId();
   const chartId = `chart-${id ?? uniqueId.replace(/:/g, "")}`;
-  return /* @__PURE__ */ jsx(ChartContext.Provider, { value: { config }, children: /* @__PURE__ */ jsxs(
+  return jsx(ChartContext.Provider, { value: { config }, children: jsxs(
     "div",
     {
       "data-slot": "chart",
@@ -37,8 +37,8 @@ function ChartContainer({
       ),
       ...props,
       children: [
-        /* @__PURE__ */ jsx(ChartStyle, { id: chartId, config }),
-        /* @__PURE__ */ jsx(
+        jsx(ChartStyle, { id: chartId, config }),
+        jsx(
           RechartsPrimitive.ResponsiveContainer,
           {
             initialDimension,
@@ -56,7 +56,7 @@ const ChartStyle = ({ id, config }) => {
   if (!colorConfig.length) {
     return null;
   }
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "style",
     {
       dangerouslySetInnerHTML: {
@@ -103,12 +103,12 @@ function ChartTooltipContent({
     const itemConfig = getPayloadConfigFromPayload(config, item, key);
     const value = !labelKey && typeof label === "string" ? config[label]?.label ?? label : itemConfig?.label;
     if (labelFormatter) {
-      return /* @__PURE__ */ jsx("div", { className: cn("font-medium", labelClassName), children: labelFormatter(value, payload) });
+      return jsx("div", { className: cn("font-medium", labelClassName), children: labelFormatter(value, payload) });
     }
     if (!value) {
       return null;
     }
-    return /* @__PURE__ */ jsx("div", { className: cn("font-medium", labelClassName), children: value });
+    return jsx("div", { className: cn("font-medium", labelClassName), children: value });
   }, [
     label,
     labelFormatter,
@@ -122,7 +122,7 @@ function ChartTooltipContent({
     return null;
   }
   const nestLabel = payload.length === 1 && indicator !== "dot";
-  return /* @__PURE__ */ jsxs(
+  return jsxs(
     "div",
     {
       className: cn(
@@ -131,19 +131,19 @@ function ChartTooltipContent({
       ),
       children: [
         !nestLabel ? tooltipLabel : null,
-        /* @__PURE__ */ jsx("div", { className: "grid gap-1.5", children: payload.filter((item) => item.type !== "none").map((item, index) => {
+        jsx("div", { className: "grid gap-1.5", children: payload.filter((item) => item.type !== "none").map((item, index) => {
           const key = `${nameKey ?? item.name ?? item.dataKey ?? "value"}`;
           const itemConfig = getPayloadConfigFromPayload(config, item, key);
           const indicatorColor = color ?? item.payload?.fill ?? item.color;
-          return /* @__PURE__ */ jsx(
+          return jsx(
             "div",
             {
               className: cn(
                 "flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5 [&>svg]:text-muted-foreground",
                 indicator === "dot" && "items-center"
               ),
-              children: formatter && item?.value !== void 0 && item.name ? formatter(item.value, item.name, item, index, item.payload) : /* @__PURE__ */ jsxs(Fragment, { children: [
-                itemConfig?.icon ? /* @__PURE__ */ jsx(itemConfig.icon, {}) : !hideIndicator && /* @__PURE__ */ jsx(
+              children: formatter && item?.value !== void 0 && item.name ? formatter(item.value, item.name, item, index, item.payload) : jsxs(Fragment, { children: [
+                itemConfig?.icon ? jsx(itemConfig.icon, {}) : !hideIndicator && jsx(
                   "div",
                   {
                     className: cn(
@@ -161,7 +161,7 @@ function ChartTooltipContent({
                     }
                   }
                 ),
-                /* @__PURE__ */ jsxs(
+                jsxs(
                   "div",
                   {
                     className: cn(
@@ -169,11 +169,11 @@ function ChartTooltipContent({
                       nestLabel ? "items-end" : "items-center"
                     ),
                     children: [
-                      /* @__PURE__ */ jsxs("div", { className: "grid gap-1.5", children: [
+                      jsxs("div", { className: "grid gap-1.5", children: [
                         nestLabel ? tooltipLabel : null,
-                        /* @__PURE__ */ jsx("span", { className: "text-muted-foreground", children: itemConfig?.label ?? item.name })
+                        jsx("span", { className: "text-muted-foreground", children: itemConfig?.label ?? item.name })
                       ] }),
-                      item.value != null && /* @__PURE__ */ jsx("span", { className: "font-mono font-medium text-foreground tabular-nums", children: typeof item.value === "number" ? item.value.toLocaleString() : String(item.value) })
+                      item.value != null && jsx("span", { className: "font-mono font-medium text-foreground tabular-nums", children: typeof item.value === "number" ? item.value.toLocaleString() : String(item.value) })
                     ]
                   }
                 )
@@ -198,7 +198,7 @@ function ChartLegendContent({
   if (!payload?.length) {
     return null;
   }
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       className: cn(
@@ -209,14 +209,14 @@ function ChartLegendContent({
       children: payload.filter((item) => item.type !== "none").map((item, index) => {
         const key = `${nameKey ?? item.dataKey ?? "value"}`;
         const itemConfig = getPayloadConfigFromPayload(config, item, key);
-        return /* @__PURE__ */ jsxs(
+        return jsxs(
           "div",
           {
             className: cn(
               "flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3 [&>svg]:text-muted-foreground"
             ),
             children: [
-              itemConfig?.icon && !hideIcon ? /* @__PURE__ */ jsx(itemConfig.icon, {}) : /* @__PURE__ */ jsx(
+              itemConfig?.icon && !hideIcon ? jsx(itemConfig.icon, {}) : jsx(
                 "div",
                 {
                   className: "h-2 w-2 shrink-0 rounded-[2px]",

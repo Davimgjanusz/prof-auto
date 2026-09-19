@@ -22,7 +22,7 @@ function ButtonGroup({
   orientation,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       role: "group",
@@ -39,7 +39,7 @@ function ButtonGroupText({
   ...props
 }) {
   const Comp = asChild ? Slot.Root : "div";
-  return /* @__PURE__ */ jsx(
+  return jsx(
     Comp,
     {
       className: cn(
@@ -55,7 +55,7 @@ function ButtonGroupSeparator({
   orientation = "vertical",
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     Separator,
     {
       "data-slot": "button-group-separator",

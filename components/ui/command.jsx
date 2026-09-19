@@ -14,7 +14,7 @@ function Command({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     CommandPrimitive,
     {
       "data-slot": "command",
@@ -34,17 +34,17 @@ function CommandDialog({
   showCloseButton = true,
   ...props
 }) {
-  return /* @__PURE__ */ jsxs(Dialog, { ...props, children: [
-    /* @__PURE__ */ jsxs(DialogHeader, { className: "sr-only", children: [
-      /* @__PURE__ */ jsx(DialogTitle, { children: title }),
-      /* @__PURE__ */ jsx(DialogDescription, { children: description })
+  return jsxs(Dialog, { ...props, children: [
+    jsxs(DialogHeader, { className: "sr-only", children: [
+      jsx(DialogTitle, { children: title }),
+      jsx(DialogDescription, { children: description })
     ] }),
-    /* @__PURE__ */ jsx(
+    jsx(
       DialogContent,
       {
         className: cn("overflow-hidden p-0", className),
         showCloseButton,
-        children: /* @__PURE__ */ jsx(Command, { className: "**:data-[slot=command-input-wrapper]:h-12 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]]:px-2 [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5", children })
+        children: jsx(Command, { className: "**:data-[slot=command-input-wrapper]:h-12 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]]:px-2 [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5", children })
       }
     )
   ] });
@@ -53,14 +53,14 @@ function CommandInput({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsxs(
+  return jsxs(
     "div",
     {
       "data-slot": "command-input-wrapper",
       className: "flex h-9 items-center gap-2 border-b px-3",
       children: [
-        /* @__PURE__ */ jsx(SearchIcon, { className: "size-4 shrink-0 opacity-50" }),
-        /* @__PURE__ */ jsx(
+        jsx(SearchIcon, { className: "size-4 shrink-0 opacity-50" }),
+        jsx(
           CommandPrimitive.Input,
           {
             "data-slot": "command-input",
@@ -79,7 +79,7 @@ function CommandList({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     CommandPrimitive.List,
     {
       "data-slot": "command-list",
@@ -94,7 +94,7 @@ function CommandList({
 function CommandEmpty({
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     CommandPrimitive.Empty,
     {
       "data-slot": "command-empty",
@@ -107,7 +107,7 @@ function CommandGroup({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     CommandPrimitive.Group,
     {
       "data-slot": "command-group",
@@ -123,7 +123,7 @@ function CommandSeparator({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     CommandPrimitive.Separator,
     {
       "data-slot": "command-separator",
@@ -136,7 +136,7 @@ function CommandItem({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     CommandPrimitive.Item,
     {
       "data-slot": "command-item",
@@ -152,7 +152,7 @@ function CommandShortcut({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "span",
     {
       "data-slot": "command-shortcut",

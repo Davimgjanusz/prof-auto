@@ -1,7 +1,7 @@
 import { jsx } from "react/jsx-runtime";
 import { cn } from "@/lib/utils";
 function Kbd({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "kbd",
     {
       "data-slot": "kbd",
@@ -16,7 +16,7 @@ function Kbd({ className, ...props }) {
   );
 }
 function KbdGroup({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "kbd",
     {
       "data-slot": "kbd-group",

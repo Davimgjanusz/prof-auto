@@ -3,7 +3,7 @@ import { cva } from "class-variance-authority";
 import { Slot } from "radix-ui";
 import { cn } from "@/lib/utils";
 function BubbleGroup({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "bubble-group",
@@ -37,7 +37,7 @@ function Bubble({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "bubble",
@@ -54,7 +54,7 @@ function BubbleContent({
   ...props
 }) {
   const Comp = asChild ? Slot.Root : "div";
-  return /* @__PURE__ */ jsx(
+  return jsx(
     Comp,
     {
       "data-slot": "bubble-content",
@@ -91,7 +91,7 @@ function BubbleReactions({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "bubble-reactions",

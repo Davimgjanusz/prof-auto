@@ -28,8 +28,6 @@ export default function Home() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const t = content[locale];
 
-  /* Browser preferences are restored after hydration. */
-  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     const savedTheme = localStorage.getItem("bbb-theme");
     const savedLocale = localStorage.getItem("bbb-locale");
@@ -37,7 +35,6 @@ export default function Home() {
     setTheme(savedTheme || (preferredDark ? "dark" : "light"));
     if (content[savedLocale]) setLocale(savedLocale);
   }, []);
-  /* eslint-enable react-hooks/set-state-in-effect */
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;

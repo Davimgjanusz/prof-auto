@@ -2,7 +2,7 @@ import { jsx } from "react/jsx-runtime";
 import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 function Empty({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "empty",
@@ -15,7 +15,7 @@ function Empty({ className, ...props }) {
   );
 }
 function EmptyHeader({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "empty-header",
@@ -46,7 +46,7 @@ function EmptyMedia({
   variant = "default",
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "empty-icon",
@@ -57,7 +57,7 @@ function EmptyMedia({
   );
 }
 function EmptyTitle({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "empty-title",
@@ -67,7 +67,7 @@ function EmptyTitle({ className, ...props }) {
   );
 }
 function EmptyDescription({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "empty-description",
@@ -80,7 +80,7 @@ function EmptyDescription({ className, ...props }) {
   );
 }
 function EmptyContent({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "empty-content",

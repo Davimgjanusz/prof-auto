@@ -39,7 +39,7 @@ function Button({
   ...props
 }) {
   const Comp = asChild ? Slot.Root : "button";
-  return /* @__PURE__ */ jsx(
+  return jsx(
     Comp,
     {
       "data-slot": "button",

@@ -13,14 +13,14 @@ import {
 } from "@/components/ui/input-group";
 const Combobox = ComboboxPrimitive.Root;
 function ComboboxValue({ ...props }) {
-  return /* @__PURE__ */ jsx(ComboboxPrimitive.Value, { "data-slot": "combobox-value", ...props });
+  return jsx(ComboboxPrimitive.Value, { "data-slot": "combobox-value", ...props });
 }
 function ComboboxTrigger({
   className,
   children,
   ...props
 }) {
-  return /* @__PURE__ */ jsxs(
+  return jsxs(
     ComboboxPrimitive.Trigger,
     {
       "data-slot": "combobox-trigger",
@@ -28,7 +28,7 @@ function ComboboxTrigger({
       ...props,
       children: [
         children,
-        /* @__PURE__ */ jsx(
+        jsx(
           ChevronDownIcon,
           {
             "data-slot": "combobox-trigger-icon",
@@ -40,14 +40,14 @@ function ComboboxTrigger({
   );
 }
 function ComboboxClear({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     ComboboxPrimitive.Clear,
     {
       "data-slot": "combobox-clear",
-      render: /* @__PURE__ */ jsx(InputGroupButton, { variant: "ghost", size: "icon-xs" }),
+      render: jsx(InputGroupButton, { variant: "ghost", size: "icon-xs" }),
       className: cn(className),
       ...props,
-      children: /* @__PURE__ */ jsx(XIcon, { className: "pointer-events-none" })
+      children: jsx(XIcon, { className: "pointer-events-none" })
     }
   );
 }
@@ -59,16 +59,16 @@ function ComboboxInput({
   showClear = false,
   ...props
 }) {
-  return /* @__PURE__ */ jsxs(InputGroup, { className: cn("w-auto", className), children: [
-    /* @__PURE__ */ jsx(
+  return jsxs(InputGroup, { className: cn("w-auto", className), children: [
+    jsx(
       ComboboxPrimitive.Input,
       {
-        render: /* @__PURE__ */ jsx(InputGroupInput, { disabled }),
+        render: jsx(InputGroupInput, { disabled }),
         ...props
       }
     ),
-    /* @__PURE__ */ jsxs(InputGroupAddon, { align: "inline-end", children: [
-      showTrigger && /* @__PURE__ */ jsx(
+    jsxs(InputGroupAddon, { align: "inline-end", children: [
+      showTrigger && jsx(
         InputGroupButton,
         {
           size: "icon-xs",
@@ -77,10 +77,10 @@ function ComboboxInput({
           "data-slot": "input-group-button",
           className: "group-has-data-[slot=combobox-clear]/input-group:hidden data-pressed:bg-transparent",
           disabled,
-          children: /* @__PURE__ */ jsx(ComboboxTrigger, {})
+          children: jsx(ComboboxTrigger, {})
         }
       ),
-      showClear && /* @__PURE__ */ jsx(ComboboxClear, { disabled })
+      showClear && jsx(ComboboxClear, { disabled })
     ] }),
     children
   ] });
@@ -94,7 +94,7 @@ function ComboboxContent({
   anchor,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(ComboboxPrimitive.Portal, { children: /* @__PURE__ */ jsx(
+  return jsx(ComboboxPrimitive.Portal, { children: jsx(
     ComboboxPrimitive.Positioner,
     {
       side,
@@ -103,7 +103,7 @@ function ComboboxContent({
       alignOffset,
       anchor,
       className: "isolate z-50",
-      children: /* @__PURE__ */ jsx(
+      children: jsx(
         ComboboxPrimitive.Popup,
         {
           "data-slot": "combobox-content",
@@ -119,7 +119,7 @@ function ComboboxContent({
   ) });
 }
 function ComboboxList({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     ComboboxPrimitive.List,
     {
       "data-slot": "combobox-list",
@@ -136,7 +136,7 @@ function ComboboxItem({
   children,
   ...props
 }) {
-  return /* @__PURE__ */ jsxs(
+  return jsxs(
     ComboboxPrimitive.Item,
     {
       "data-slot": "combobox-item",
@@ -147,12 +147,12 @@ function ComboboxItem({
       ...props,
       children: [
         children,
-        /* @__PURE__ */ jsx(
+        jsx(
           ComboboxPrimitive.ItemIndicator,
           {
             "data-slot": "combobox-item-indicator",
-            render: /* @__PURE__ */ jsx("span", { className: "pointer-events-none absolute right-2 flex size-4 items-center justify-center" }),
-            children: /* @__PURE__ */ jsx(CheckIcon, { className: "pointer-events-none size-4 pointer-coarse:size-5" })
+            render: jsx("span", { className: "pointer-events-none absolute right-2 flex size-4 items-center justify-center" }),
+            children: jsx(CheckIcon, { className: "pointer-events-none size-4 pointer-coarse:size-5" })
           }
         )
       ]
@@ -160,7 +160,7 @@ function ComboboxItem({
   );
 }
 function ComboboxGroup({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     ComboboxPrimitive.Group,
     {
       "data-slot": "combobox-group",
@@ -173,7 +173,7 @@ function ComboboxLabel({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     ComboboxPrimitive.GroupLabel,
     {
       "data-slot": "combobox-label",
@@ -186,10 +186,10 @@ function ComboboxLabel({
   );
 }
 function ComboboxCollection({ ...props }) {
-  return /* @__PURE__ */ jsx(ComboboxPrimitive.Collection, { "data-slot": "combobox-collection", ...props });
+  return jsx(ComboboxPrimitive.Collection, { "data-slot": "combobox-collection", ...props });
 }
 function ComboboxEmpty({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     ComboboxPrimitive.Empty,
     {
       "data-slot": "combobox-empty",
@@ -205,7 +205,7 @@ function ComboboxSeparator({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     ComboboxPrimitive.Separator,
     {
       "data-slot": "combobox-separator",
@@ -218,7 +218,7 @@ function ComboboxChips({
   className,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     ComboboxPrimitive.Chips,
     {
       "data-slot": "combobox-chips",
@@ -236,7 +236,7 @@ function ComboboxChip({
   showRemove = true,
   ...props
 }) {
-  return /* @__PURE__ */ jsxs(
+  return jsxs(
     ComboboxPrimitive.Chip,
     {
       "data-slot": "combobox-chip",
@@ -247,13 +247,13 @@ function ComboboxChip({
       ...props,
       children: [
         children,
-        showRemove && /* @__PURE__ */ jsx(
+        showRemove && jsx(
           ComboboxPrimitive.ChipRemove,
           {
-            render: /* @__PURE__ */ jsx(Button, { variant: "ghost", size: "icon-xs" }),
+            render: jsx(Button, { variant: "ghost", size: "icon-xs" }),
             className: "-ml-1 opacity-50 hover:opacity-100",
             "data-slot": "combobox-chip-remove",
-            children: /* @__PURE__ */ jsx(XIcon, { className: "pointer-events-none" })
+            children: jsx(XIcon, { className: "pointer-events-none" })
           }
         )
       ]
@@ -265,7 +265,7 @@ function ComboboxChipsInput({
   children,
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     ComboboxPrimitive.Input,
     {
       "data-slot": "combobox-chip-input",

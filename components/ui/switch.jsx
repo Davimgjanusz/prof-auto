@@ -7,7 +7,7 @@ function Switch({
   size = "default",
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     SwitchPrimitive.Root,
     {
       "data-slot": "switch",
@@ -17,7 +17,7 @@ function Switch({
         className
       ),
       ...props,
-      children: /* @__PURE__ */ jsx(
+      children: jsx(
         SwitchPrimitive.Thumb,
         {
           "data-slot": "switch-thumb",

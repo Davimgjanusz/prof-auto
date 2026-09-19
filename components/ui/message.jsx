@@ -1,7 +1,7 @@
 import { jsx } from "react/jsx-runtime";
 import { cn } from "@/lib/utils";
 function MessageGroup({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "message-group",
@@ -15,7 +15,7 @@ function Message({
   align = "start",
   ...props
 }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "message",
@@ -29,7 +29,7 @@ function Message({
   );
 }
 function MessageAvatar({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "message-avatar",
@@ -42,7 +42,7 @@ function MessageAvatar({ className, ...props }) {
   );
 }
 function MessageContent({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "message-content",
@@ -55,7 +55,7 @@ function MessageContent({ className, ...props }) {
   );
 }
 function MessageHeader({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "message-header",
@@ -68,7 +68,7 @@ function MessageHeader({ className, ...props }) {
   );
 }
 function MessageFooter({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "div",
     {
       "data-slot": "message-footer",

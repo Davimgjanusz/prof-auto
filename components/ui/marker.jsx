@@ -21,7 +21,7 @@ function Marker({
   ...props
 }) {
   const Comp = asChild ? Slot.Root : "div";
-  return /* @__PURE__ */ jsx(
+  return jsx(
     Comp,
     {
       "data-slot": "marker",
@@ -32,7 +32,7 @@ function Marker({
   );
 }
 function MarkerIcon({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "span",
     {
       "data-slot": "marker-icon",
@@ -46,7 +46,7 @@ function MarkerIcon({ className, ...props }) {
   );
 }
 function MarkerContent({ className, ...props }) {
-  return /* @__PURE__ */ jsx(
+  return jsx(
     "span",
     {
       "data-slot": "marker-content",

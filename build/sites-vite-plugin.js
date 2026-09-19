@@ -4,9 +4,9 @@ const localUserId = "local_seedy";
 const localEmail = "seedy@sites.test";
 const localFullName = "Seedy";
 const localCookieName = "__sites_local_auth";
-const localHosts = /* @__PURE__ */ new Set(["localhost", "127.0.0.1", "::1"]);
-const localAddresses = /* @__PURE__ */ new Set(["127.0.0.1", "::1", "::ffff:127.0.0.1"]);
-const authPaths = /* @__PURE__ */ new Set([
+const localHosts = new Set(["localhost", "127.0.0.1", "::1"]);
+const localAddresses = new Set(["127.0.0.1", "::1", "::ffff:127.0.0.1"]);
+const authPaths = new Set([
   "/signin-with-chatgpt",
   "/signout-with-chatgpt",
   "/callback"
