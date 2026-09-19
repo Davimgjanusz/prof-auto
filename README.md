@@ -85,8 +85,6 @@ O componente principal em `app/page.jsx` controla idioma, tema, menu móvel e el
 
 ```text
 prof-auto/
-├── .openai/
-│   └── hosting.json            # Configuração de publicação no Sites
 ├── app/
 │   ├── content.js              # Conteúdo completo em PT, ES e EN
 │   ├── globals.css             # Tema, layout, animações e responsividade
