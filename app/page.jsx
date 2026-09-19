@@ -48,7 +48,7 @@ export default function Home() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
+          entry.target.dataset.revealed = "true";
           observer.unobserve(entry.target);
         }
       });
